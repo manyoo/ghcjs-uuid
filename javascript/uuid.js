@@ -1,6 +1,7 @@
 // code based on: http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
 
-window['generateUUID'] = function generateUUID(){
+var globalObj = this;
+globalObj['generateUUID'] = function generateUUID(){
     var d = new window['Date']()['getTime']();
     if(window['performance'] && typeof window['performance']['now'] === "function"){
         d += window['performance']['now'](); //use high-precision timer if available
